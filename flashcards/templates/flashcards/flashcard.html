@@ -1,0 +1,68 @@
+<style>
+   /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+.flip-box {
+  background-color: transparent;
+  width: 500px;
+  height: 400px;
+  border: 0px solid #f1f1f1;
+  perspective: 2000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  max-height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+   color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+   background-color: green;
+   color: white;
+   transform: rotateY(180deg);
+}
+</style>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+   <div class="flip-box-front">
+      <article>
+         <h3>difficulty level:</h3>
+         <h3 class="difficulty">{{ flashcard.difficulty }}</h3>
+         <h1 class="question">{{ flashcard.question }}</h1>
+      </article>
+   </div>
+  <div class="flip-box-back">
+   <h3 class="pinyin">pinyin:   {{ flashcard.pinyin }}</h3>
+   <p class="answer">meaning:   {{ flashcard.answer }}</p>
+   <div>
+      <h3 class="mnemonic">character mnemonic:</h3>
+      <h3 class="mnemonic">{{ flashcard.mnemonic }}</h3>
+   </div>
+   <a class="del-card" href="delete/{{ flashcard.id }}">delete flashcard</a>
+</div>
+</div>
+</div>

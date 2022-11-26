@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Flashcards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="DELETE" action="">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                {{form.question}}
+                {{form.answer}}
+            </div>
+
+ <hr>
+            {% for data in queryset %}
+            <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action">Question: {{data.question}}</a>
+                <a href="#" class="list-group-item list-group-item-action">Answer: {{data.answer}}</a>
+                <a href="{% url 'delete' data.id %}">delete flashcard</a>
+            </div>
+            {% endfor %}
+            <hr>
+
+        </form>
+    </div>
+</body>

@@ -1,0 +1,15 @@
+{% extends "flashcards/base.html" %}
+{% load humanize%}
+
+{% block content %}
+<h2>
+    All Flashcards
+</h2>
+     <div id="create-ele" class="container mt-3">
+           <a href="{% url 'create' %}" ></a>
+    </div>
+    {% for flashcard in flashcard_list %}
+        {% include "flashcards/flashcard.html" %}
+       
+    {% endfor %}
+{% endblock content %}
