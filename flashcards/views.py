@@ -1,5 +1,4 @@
 from django.urls import (
-    reverse,
     reverse_lazy
 )
 from django.views.generic import (
@@ -40,9 +39,6 @@ def create(request):
         if form.is_valid():
             form.save()
             return redirect('http://localhost:8000')
-    # context = {
-    #     "form": form
-    # }``
     else:
         form = FlashcardFORM()
     return render(request, 'flashcards/createform.html', {'form': form})

@@ -5,33 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chinese Flashcards</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-     {% comment %} <link rel="stylesheet" src="base.css" /> {% endcomment %}
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" /> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy`+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nerko+One&family=Secular+One&display=swap" rel="stylesheet">
 </head>
 
 <style>
-body (
-    font-family: Josefin Sans, sans-serif;
-    background-color: pink
-)
 
-    :root {
-    --accent: #6e48ad;
-    --accent-bg: white;
-    --bg: #fff;
-    --text: #212121;
-    --text-light: #585858;
-    --border: #d8dae1;
-    --code: #d81b60;
-    --preformatted: #444;
-}
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #F5F5F5;
+        font-family: 'Secular One', sans-serif;
+        font-size: 30px;
+    }
 
 header {
-    background-color: #f1f1f1;
     background-image: url("https://i.imgur.com/X0ZLbOO.png");
-    font-size: 15085px;
-    color: red;
+}
+
+.header {
+    font-family: 'Bree Serif', serif;
+    font-size: 7rem;
+    letter-spacing: 0.5rem;
+    width: 2000px;
+    max-width: 100%;
+    height: 180px;
+    font-weight: bolder;
+    text-shadow: 8px 8px 8px #000000;
+    color: purple;
+    padding: 20px;
 }
 
 article {
@@ -72,9 +79,9 @@ h3 {
 
 }
 
-hr {
+{% comment %} hr {
     background: var(--accent);
-}
+} {% endcomment %}
 
 input, select, textarea {
     width: 70%;
@@ -113,7 +120,7 @@ div#create-ele {
 
 <body>
     <header>
-        <h1>Chinese Flashcards App</h1>
+        <h1 class="header">Chinese Flashcards</h1>
     </header>
     <main>
         <div class="container mt-3">

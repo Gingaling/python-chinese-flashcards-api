@@ -1,5 +1,5 @@
-from django.urls import path, include, reverse_lazy
-# from . import views
+from django.urls import path
+
 from flashcards.views import (
     home,
     create,
@@ -11,14 +11,14 @@ from .models import Flashcard
 
 urlpatterns = [
     path(
-        'home',
+        "",
         home,
         name='home',
     ),
     path(
-        "",
-        FlashcardListView.as_view(),
-        name="flashcard_list_1",
+        'home/',
+        home,
+        name='home',
     ),
     path(
         "list/",
@@ -26,9 +26,9 @@ urlpatterns = [
         name = "flashcard_list"
     ),
     path(
-        "new/",
-        FlashcardCreateView.as_view(),
-        name="flashcard-create"
+        "add/",
+        create,
+        name="create"
     ),
     path(
         "create/",
@@ -39,5 +39,10 @@ urlpatterns = [
         'delete/<int:id>',
         delete,
         name="delete"
+    ),
+    path(
+        "*",
+        home,
+        name="home"
     ),
 ]
