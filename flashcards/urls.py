@@ -1,29 +1,29 @@
-from django.urls import path
+from django.urls import include, path
+
+from . import views
 
 from flashcards.views import (
     home,
     create,
+    collection,
     delete,
-    FlashcardListView, FlashcardCreateView
+    FlashcardListView,
+    FlashcardCreateView,
+    # FlashcardUpdateView,
 )
 
 from .models import Flashcard
 
 urlpatterns = [
     path(
-        "",
-        home,
-        name='home',
-    ),
-    path(
         'home/',
         home,
         name='home',
     ),
     path(
-        "list/",
-        FlashcardListView.as_view(), 
-        name = "flashcard_list"
+        "",
+        FlashcardListView.as_view(),
+        name="Flashcard-list",
     ),
     path(
         "add/",
@@ -35,14 +35,14 @@ urlpatterns = [
         create,
         name="create"
     ),
+    # path(
+    #     "edit/<int:pk>",
+    #     FlashcardUpdateView.as_view(),
+    #     name="Flashcard-update"
+    # ),
     path(
         'delete/<int:id>',
         delete,
         name="delete"
-    ),
-    path(
-        "*",
-        home,
-        name="home"
     ),
 ]

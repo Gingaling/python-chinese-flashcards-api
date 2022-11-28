@@ -1,15 +1,21 @@
 {% extends "flashcards/base.html" %}
-{% load humanize%}
+{% load humanize %}
+
+<div id="create-ele" class="container mt-3">
+<a href="{% url 'create' %}" ></a>
+</div>
 
 {% block content %}
-<h2>
-    All Flashcards
-</h2>
-     <div id="create-ele" class="container mt-3">
-           <a href="{% url 'create' %}" ></a>
+    <h2>
+        All Flashcards
+    </h2>
+    <div class="container mt-3">
+        <a href="{% url 'create' %}" >Click here to create a new Flashcard</a>
     </div>
+    {% comment %} <a href="{% url 'Flashcard-create' %}" role="button">
+        ✨ Create a New Card
+    </a> {% endcomment %}
     {% for flashcard in flashcard_list %}
-        {% include "flashcards/flashcard.html" %}
-       
+    {% include "flashcards/flashcard.html" %}
     {% endfor %}
 {% endblock content %}

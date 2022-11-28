@@ -1,17 +1,22 @@
 {% extends "flashcards/base.html" %}
+
 from django.urls import (
     reverse,
     reverse_lazy
 )
 
 {% block content %}
-    <h2>✨ Create a New Flashcard</h2>
+    {% if card %}
+        <h2>✏️ Edit Flashcard</h2>
+    {% else %}
+        <h2>✨ Create a New Flashcard</h2>
+    {% endif %}
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save Flashcard">
     </form>
-    {% comment %} <a href="{% url 'flashcard-create' %}">
+    <a href="{% url 'flashcard-create' %}">
         Cancel
-    </a> {% endcomment %}
+    </a>
 {% endblock %}

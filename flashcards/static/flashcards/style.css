@@ -1,0 +1,190 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    background-color: pink;
+}
+
+header {
+    position: relative;
+    margin: 0;
+    background-image: url("https://i.imgur.com/X0ZLbOO.png");
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3vw;
+    width: 100vw;
+    max-width: 100%;
+    height: 250px;
+    font-weight: bolder;
+    text-shadow: 8px 8px 8px pink;
+    color: #F55740;
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 50px;
+    text-align: left;
+    background: #0A47A8;
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 20px;
+}
+
+a {
+    position: relative;
+    margin: 0 10px 35px 25px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+a:visited {
+    color: yellow;
+}
+
+main {
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+}
+
+article {
+    background-color: #7eaaf2;
+    text-align: center;
+    max-width: 450px;
+    max-height:450px;
+    border: 10px solid black;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+h2.nihao {
+    font-size: 7em;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 25px;
+}
+
+h2.welcome {
+    font-size: 3em;
+    text-align: center;
+}
+
+h2, h4 {
+    margin-top: 0;
+}
+
+h2.welcome {
+    font-size: 4em;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: .7em;
+    font-weight: normal;
+}
+
+.question {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.answer {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+{% comment %} hr {
+    background: var(--accent);
+} {% endcomment %}
+
+input, select, textarea {
+    width: 70%;
+}
+
+h3.mnemonic {
+    display: inline-block;
+    margin: 5px;
+    font-weight: bold;
+}
+
+h3.pinyin {
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+a.del-card {
+    font-size: .7em;
+    font-weight: bold;
+    color: orange;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+div.container.mt-3 {
+    text-align: center;
+}
+
+div#create-ele {
+    text-align: center;
+}
+
+
+   /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+.flip-box {
+    text-align: center;
+    background-color: transparent;
+    width: 450px;
+    height: 450px;
+    border: 0px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;width: 450px;
+    height: 50px;
+    text-align: center;transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 450px;
+    max-height: 450px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+    color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+    text-align: center;
+    background-color: #c67cba;
+    color: black;
+    height: 40%;
+    border: 10px solid black;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
